@@ -11,6 +11,7 @@ TagManager:
   - Background
   - ScoreKeeper
   - Timer
+  - Lives
   layers:
   - Default
   - TransparentFX

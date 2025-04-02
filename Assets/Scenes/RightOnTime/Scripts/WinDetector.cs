@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LaptopRotationScript : MonoBehaviour
+public class WinDetector : MonoBehaviour
 {
     RoundManager round;
 
@@ -36,7 +36,7 @@ public class LaptopRotationScript : MonoBehaviour
 
         yield return new WaitForSeconds(0.05f);
         Animator animator = GetComponent<Animator>();
-        animator.SetBool("DidLose", !round.didCompleteTask);
+        animator.SetBool("DidWin", round.didCompleteTask);
 
     }
 }

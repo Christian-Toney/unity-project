@@ -58,7 +58,7 @@ public class RoundInitializer : MonoBehaviour
 
             GameObject.FindGameObjectWithTag("ScoreKeeper").GetComponent<TextMeshProUGUI>().text = "Your score: " + round.score;
 
-            GameObject.FindGameObjectWithTag("Background").GetComponent<Image>().color = new Color32(0, 0, 0, 0);
+            GameObject.FindGameObjectWithTag("Background").GetComponent<Animator>().SetBool("DidStart", true);
             string microgameName = microgameNames.OrderBy(s => Guid.NewGuid()).First();
             SceneManager.LoadScene(microgameName, LoadSceneMode.Single);
             round.timeRemaining = round.defaultTimeRemaining;
@@ -88,7 +88,7 @@ public class RoundInitializer : MonoBehaviour
         round.bestScore = round.score > round.bestScore ? round.score : round.bestScore;
         GameObject.FindGameObjectWithTag("ScoreKeeper").GetComponent<TextMeshProUGUI>().text = "Your best score: " + round.bestScore;
 
-        GameObject.FindGameObjectWithTag("Background").GetComponent<Image>().color = new Color32(0, 0, 0, 100);
+        GameObject.FindGameObjectWithTag("Background").GetComponent<Animator>().SetBool("DidStart", false);
         didGameStart = false;
 
     }
