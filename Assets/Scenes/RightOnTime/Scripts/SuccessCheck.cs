@@ -21,7 +21,7 @@ public class SuccessCheck : MonoBehaviour
 
             didInteract = true;
 
-            if (round.timeRemaining - 1f <= 0) {
+            if (round.timeRemaining - 2.25f <= 0) {
 
                 GameObject.FindGameObjectWithTag("WinSoundEffect").GetComponent<AudioSource>().Play();
                 round.didCompleteTask = true;

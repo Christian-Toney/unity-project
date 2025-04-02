@@ -18,7 +18,7 @@ public class RoundInitializer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Screen.SetResolution(1920, 1080, false); 
+        Screen.SetResolution(1080, 720, false); 
         round = GameObject.FindGameObjectWithTag("RoundManager").GetComponent<RoundManager>();
     }
 
@@ -85,7 +85,8 @@ public class RoundInitializer : MonoBehaviour
 
         }
 
-        GameObject.FindGameObjectWithTag("ScoreKeeper").GetComponent<TextMeshPro>().text = "Your best score: " + round.bestScore;
+        round.bestScore = round.score > round.bestScore ? round.score : round.bestScore;
+        GameObject.FindGameObjectWithTag("ScoreKeeper").GetComponent<TextMeshProUGUI>().text = "Your best score: " + round.bestScore;
 
         GameObject.FindGameObjectWithTag("Background").GetComponent<Image>().color = new Color32(0, 0, 0, 100);
         didGameStart = false;

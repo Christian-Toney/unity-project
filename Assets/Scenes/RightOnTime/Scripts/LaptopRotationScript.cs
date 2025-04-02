@@ -36,7 +36,7 @@ public class LaptopRotationScript : MonoBehaviour
 
         yield return new WaitForSeconds(0.05f);
         Animator animator = GetComponent<Animator>();
-        Debug.Log("Ok");
+        Debug.Log(!round.didCompleteTask);
         animator.SetBool("DidLose", !round.didCompleteTask);
 
     }

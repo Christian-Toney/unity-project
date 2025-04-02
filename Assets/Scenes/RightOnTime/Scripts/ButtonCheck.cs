@@ -25,8 +25,8 @@ public class ButtonCheck : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space)) {
 
-            gameObject.GetComponent<Animator>().SetTrigger("Clicked");
             didInteract = true;
+            gameObject.GetComponent<Animator>().SetBool("Clicked", true);
 
         }
 
